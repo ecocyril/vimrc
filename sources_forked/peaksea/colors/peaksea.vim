@@ -349,7 +349,7 @@ elseif &background=='dark'
     hi Comment		ctermfg=DarkYellow  ctermbg=bg
     hi Constant		ctermfg=Blue	    ctermbg=bg
     hi Number		ctermfg=Yellow	    ctermbg=bg
-    hi LineNr		ctermfg=DarkGrey    ctermbg=bg
+    hi LineNr		ctermfg=Yellow    ctermbg=bg
     hi PreProc		ctermfg=Green	    ctermbg=bg
     hi Statement	ctermfg=Cyan	    ctermbg=bg
     hi Type		ctermfg=Cyan	    ctermbg=bg
