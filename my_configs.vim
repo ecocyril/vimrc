@@ -1,7 +1,7 @@
-
 set nu
 set pastetoggle=<F3>
-:autocmd BufNew,BufRead SConstruct setf python
+:autocmd BufNew,BufRead SConstruct *.scons setf python
+:autocmd BufNew,BufRead .fishrc setf fish
 
 try
     source ~/.vim_runtime/my_func.vim
