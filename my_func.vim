@@ -15,18 +15,22 @@ function! s:align()
 endfunction
 
 " auto insert cxx header gate
+"function! s:insert_gates()
+"    let gatename = substitute(toupper(expand("%:t")), "\\.", "_", "g")
+"    execute "normal i#ifndef " . gatename
+"    execute "normal o#define " . gatename . "   "
+"    execute "normal Go#endif /* " . gatename . " */"
+"    normal kk
+"endfunction
+"autocmd  BufNewFile *.{h,hpp} call <SID>insert_gates()
 function! s:insert_gates()
-    let gatename = substitute(toupper(expand("%:t")), "\\.", "_", "g")
-    execute "normal i#ifndef " . gatename
-    execute "normal o#define " . gatename . "   "
-    execute "normal Go#endif /* " . gatename . " */"
-    normal kk
+    execute "normal i#pragma once"
 endfunction
-autocmd  BufNewFile *.{h,hpp} call <SID>insert_gates()
+autocmd  BufNewFile *.{h,hpp,cuh} call <SID>insert_gates()
 
 " auto insert python interpreter
 function! s:insert_python_interpreter()
-    execute "normal i#!/usr/bin/env python"
+    execute "normal i#!/usr/bin/env python3"
     normal kk
 endfunction
 autocmd BufNewFile *.{py} call <SID>insert_python_interpreter()

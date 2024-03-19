@@ -1,6 +1,7 @@
 set nu
 set pastetoggle=<F3>
-:autocmd BufNew,BufRead SConstruct *.scons setf python
+:autocmd BufNew,BufRead SConstruct setf python
+:autocmd BufNew,BufRead .scons setf python
 :autocmd BufNew,BufRead .fishrc setf fish
 
 try
@@ -23,5 +24,6 @@ let g:syntastic_style_warning_symbol = '?'
 
 let g:clang_format#command = 'clang-format'
 nmap <F4> :ClangFormat<cr>
-autocmd FileType c ClangFormatAutoEnable
+autocmd FileType c ClangFormatAutoDisable
 let g:clang_format#detect_style_file = 1
+
