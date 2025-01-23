@@ -27,3 +27,4 @@ nmap <F4> :ClangFormat<cr>
 autocmd FileType c ClangFormatAutoDisable
 let g:clang_format#detect_style_file = 1
 
+let g:auto_clean_extra_spaces = 1

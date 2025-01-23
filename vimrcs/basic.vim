@@ -288,6 +288,9 @@ endif
 
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()
+    if !exists('g:auto_clean_extra_spaces') || g:auto_clean_extra_spaces == 0
+        return
+    endif
     let save_cursor = getpos(".")
     let old_query = getreg('/')
     silent! %s/\s\+$//e
